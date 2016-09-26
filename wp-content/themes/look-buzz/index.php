@@ -16,6 +16,7 @@ get_search_form();
 ?>
 <div class="container">
     <div class="col-md-12">
+        <div class="breadcrumb">Navigation : <?php get_breadcrumb(); ?></div>
         <div class="row">
 
             <?php

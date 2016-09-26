@@ -99,15 +99,16 @@ function look_buzz_widgets_init() {
         'after_title' => '</h2>',
     ));
     
-//    register_sidebar(array(
-//        'name' => esc_html__('HomeContent', 'look-buzz'),
-//        'id' => 'HomeContent-1',
-//        'description' => esc_html__('Add widgets here.', 'look-buzz'),
-//        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-//        'after_widget' => '</section>',
-//        'before_title' => '<h2 class="widget-title">',
-//        'after_title' => '</h2>',
-//    ));
+    register_sidebar(array(
+        'name' => esc_html__('sidebar-2', 'look-buzz'),
+        'id' => 'sidebar-2',
+        'description' => esc_html__('Add widgets here.', 'look-buzz'),
+        'before_widget' => '<div class="sidebar-item categories categories-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+        
+    ));
     
     
 }
@@ -164,6 +165,27 @@ function special_nav_class ($classes, $item) {
         $classes[] = 'active ';
     }
     return $classes;
+}
+
+// navigation 
+function get_breadcrumb() {
+    echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
+    if (is_category() || is_single()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        the_category(' &bull; ');
+            if (is_single()) {
+                echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+                the_title();
+            }
+    } elseif (is_page()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        echo the_title();
+    } elseif (is_search()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+        echo '"<em>';
+        echo the_search_query();
+        echo '</em>"';
+    }
 }
 
 
