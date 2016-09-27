@@ -1249,15 +1249,20 @@ Portfolio with right sidebar
 }
 
 .categories .navbar-stacked li a {
-  font-size: 16px;
+  font-size: 18px;
   color: #6a6a6a;
   padding: 8px 0;
-  padding-left: 0;
+  padding-left: 0px;
+  text-transform: capitalize;
+}
+
+.categories .navbar-stacked li i  {
+    margin-right: 6px;
 }
 
 .categories .navbar-stacked li a:hover{
   background: none;
-  margin-left: 20px;
+  margin-left: 5px;
   color: #a51c30;
   opacity: 1;
 }
@@ -1300,6 +1305,7 @@ Portfolio with right sidebar
 }
 
 .sidebar-item .media{
+  border-left: 3px solid transparent;
   border-bottom: 1px solid #ececec;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -1316,8 +1322,8 @@ Portfolio with right sidebar
 }
 
 .sidebar-item .media:hover{
-  border-left: 2px solid #a51c30;
-  padding-left: 5px;
+  border-left: 3px solid #a51c30;
+  /* padding-left: 5px; */
   transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -webkit-transition: all 0.3s ease 0s;
@@ -1358,7 +1364,7 @@ Portfolio with right sidebar
 }
 
 .tag-cloud .nav-pills li a{
-  font-size: 14px;
+  font-size: 14px !important;
   font-weight: 300;
   padding: 5px 15px;
   background: #bbbbbb;
@@ -2922,3 +2928,4 @@ width: 100%;
     width: 52px ;
     height: 52px;
 }
+

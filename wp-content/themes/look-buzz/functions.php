@@ -100,10 +100,21 @@ function look_buzz_widgets_init() {
     ));
     
     register_sidebar(array(
-        'name' => esc_html__('sidebar-2', 'look-buzz'),
-        'id' => 'sidebar-2',
-        'description' => esc_html__('Add widgets here.', 'look-buzz'),
+        'name' => esc_html__('Categorie_Sidebar', 'look-buzz'),
+        'id' => 'Categorie_Sidebar',
+        'description' => esc_html__('Add widgets here Categories .', 'look-buzz'),
         'before_widget' => '<div class="sidebar-item categories categories-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+        
+    ));
+    
+    register_sidebar(array(
+        'name' => esc_html__('Tags_Sidebar', 'look-buzz'),
+        'id' => 'Tags_Sidebar',
+        'description' => esc_html__('Add widgets here Categories .', 'look-buzz'),
+        'before_widget' => '<div class="sidebar-item tags-widget">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
