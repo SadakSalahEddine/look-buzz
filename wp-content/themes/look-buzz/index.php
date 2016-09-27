@@ -27,7 +27,7 @@ get_search_form();
                     <div class="col-md-12 title-bloc">
                         <p>
                             <span>New</span>
-                            <label>Last New Buzz</label>
+                            <label>Last New Buzz </label>
                         </p>
                     </div>
 

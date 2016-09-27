@@ -126,6 +126,11 @@ function look_buzz_widgets_init() {
 
 add_action('widgets_init', 'look_buzz_widgets_init');
 
+//Remove wordpress version
+function  look_buzz_remove_version (){
+    return '';
+}
+add_filter("the_generator", "look_buzz_remove_version");
 /**
  * Enqueue scripts and styles.
  */
@@ -224,3 +229,5 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+require get_template_directory().'/walker.php' ;

@@ -14,11 +14,11 @@ get_search_form();
     <div class="col-md-3 col-sm-5">
         <div class="sidebar blog-sidebar">
 
-            <?php  
-                   get_template_part( 'template-parts/content', 'category' );
-                  get_template_part( 'template-parts/content', 'tags' );
-                  get_template_part( 'template-parts/content', 'recentPosts' );
-                  get_template_part( 'template-parts/content', 'NewsLetter' );
+            <?php
+            get_template_part('template-parts/content', 'category');
+            get_template_part('template-parts/content', 'tags');
+            get_template_part('template-parts/content', 'recentPosts');
+            get_template_part('template-parts/content', 'NewsLetter');
             ?>
         </div>
     </div>
@@ -30,6 +30,7 @@ get_search_form();
             <div class="row">
                 <div class="col-md-9">
                     <div class="breadcrumb">Navigation :  <?php get_breadcrumb(); ?></div>
+                    <?php echo '<div style="float : left">' . edit_post_link() . '</div>'; ?>
                 </div>
                 <?php
                 while (have_posts()) : the_post();
@@ -73,12 +74,22 @@ get_search_form();
                         </div>
                     </div>
 
-                    <div class="col-md-9 navigation_posts">
+<!--                    <div class="col-md-9 navigation_posts">
                         <?php
-                        echo the_post_navigation(array(
-                            'screen_reader_text' => 'Prevous And Next Buzz'));
+//                        echo the_post_navigation(array(
+//                            'screen_reader_text' => 'Prevous And Next Buzz'));
                         ?>
-                    </div>
+                    </div>-->
+                
+                <div class="col-md-9 navigation_posts">
+                     <div class="col-md-6 text-right"><?php previous_post_link() ?></div>
+                    <div class="col-md-6 text-left"><?php  next_post_link() ?></div>
+                   
+
+                </div>
+
+
+
                     <?php
                 // If comments are open or we have at least one comment, load up the comment template.
 //			if ( comments_open() || get_comments_number() ) :
@@ -89,9 +100,7 @@ get_search_form();
                 ?>
 
 
-
-
-
+                
             </div>
         </div>
     </section>
