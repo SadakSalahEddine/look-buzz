@@ -16,20 +16,26 @@ get_search_form();
 ?>
 <div class="container">
     <div class="col-md-12">
+        <img src="<?php echo get_stylesheet_directory_uri().'/images/Sans titre-1.png' ?>" width="100%">  
+    </div>
+    
+    <div class="col-md-12">
         <div class="breadcrumb">Navigation : <?php get_breadcrumb(); ?></div>
-        <div class="row">
+        
+          
+        <div class="row blocs-row">
 
             <?php
             if (have_posts()) :
 
                 if (is_home() && !is_front_page()) :
                     ?>
-                    <div class="col-md-12 title-bloc">
+<!--                    <div class="col-md-12 title-bloc">
                         <p>
                             <span>New</span>
                             <label>Last New Buzz </label>
                         </p>
-                    </div>
+                    </div>-->
 
                     <?php
                 endif;
@@ -43,7 +49,9 @@ get_search_form();
                      */
                     //  get_template_part('template-parts/content', get_post_format());
                     ?>
-                    <div class="col-md-4 col-sm-12 text-center wow fadeIn" data-wow-duration="500ms" data-wow-delay="500ms">
+            
+        
+                    <div class="col-md-4 col-sm-12 text-center wow fadeIn home-blocs clearfix" data-wow-duration="500ms" data-wow-delay="500ms">
                         <div class="single-blog two-column">
                             <div class="post-thumb">
                                 <a href="<?php echo get_permalink(); ?>" class="img-home-bloc"><?php the_post_thumbnail(); ?></a>
@@ -82,6 +90,10 @@ get_search_form();
                 ?> 
             </div>
         </div>           
+    </div>
+    <div class="col-md-12 sidebar">
+        <h3>featured</h3>
+        <?php echo do_shortcode('[carousel-horizontal-posts-content-slider]'); ?>
     </div>
 
 

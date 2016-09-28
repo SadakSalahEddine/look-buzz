@@ -35,27 +35,28 @@ get_search_form();
                 <?php
                 while (have_posts()) : the_post();
                     ?>
-                    <div class="col-sm-4 img-responsive">
-                        <?php the_post_thumbnail(); ?>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="project-name overflow">
+
+                    <div class="col-sm-9">
+                        <div class="img-responsive">
+                            <?php the_post_thumbnail(); ?>
+                        </div>
+                        <div class="project-name">
                             <h2 class="bold"><?php echo get_the_title(); ?> </h2>
                             <ul class="nav navbar-nav navbar-default">
                                 <li><a href="#"><i class="fa fa-clock-o"></i><?php echo the_date('d-m-Y'); ?></a></li>
                                 <li><a href="#"><i class="fa fa-user"></i><?php echo 'Posted by ' . get_the_author(); ?> </a></li>
                             </ul>
                         </div>
-                        <div class="project-info overflow">
-                            <!--<h3>Project Info</h3>-->
+                        <div class="project-info">
+                            <br/>
                             <p><?php echo get_the_content(); ?></p>
-                            <ul class="elements">
-                                <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li><i class="fa fa-angle-right"></i> Donec tincidunt felis quis ipsum porttitor, non rutrum lorem rhoncus.</li>
-                                <li><i class="fa fa-angle-right"></i> Nam in quam consectetur nulla placerat dapibus ut ut nunc.</li>
-                            </ul>
+                            <!--                            <ul class="elements">
+                                                            <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                                            <li><i class="fa fa-angle-right"></i> Donec tincidunt felis quis ipsum porttitor, non rutrum lorem rhoncus.</li>
+                                                            <li><i class="fa fa-angle-right"></i> Nam in quam consectetur nulla placerat dapibus ut ut nunc.</li>
+                                                        </ul>-->
                         </div>
-                        <div class="skills overflow">
+                        <div class="skills">
                             <h3>Share :</h3>
                             <ul class="nav navbar-nav navbar-default">
                                 <li><a href="#"><i class="fa fa-facebook"></i>Facebook </a></li>
@@ -72,21 +73,23 @@ get_search_form();
 
                             <span class='st_email_hcount'></span>
                         </div>
+
+                        <div class="col-md-12 navigation_posts">
+                            <div class="col-md-6 text-left"><?php previous_post_link() ?></div>
+                            <div class="col-md-6 text-right"><?php next_post_link() ?></div>    
+
+                        </div>
+
                     </div>
 
-<!--                    <div class="col-md-9 navigation_posts">
-                        <?php
+                    <!--                    <div class="col-md-9 navigation_posts">
+                    <?php
 //                        echo the_post_navigation(array(
 //                            'screen_reader_text' => 'Prevous And Next Buzz'));
-                        ?>
-                    </div>-->
-                
-                <div class="col-md-9 navigation_posts">
-                     <div class="col-md-6 text-right"><?php previous_post_link() ?></div>
-                    <div class="col-md-6 text-left"><?php  next_post_link() ?></div>
-                   
+                    ?>
+                                        </div>-->
 
-                </div>
+
 
 
 
@@ -100,7 +103,7 @@ get_search_form();
                 ?>
 
 
-                
+
             </div>
         </div>
     </section>
